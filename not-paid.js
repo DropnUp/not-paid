@@ -1,24 +1,21 @@
-// Next time use letsdeel.com to make sure you get paid
-(function(){
-	/* change these variables as you wish */
-	var due_date = new Date('2017-02-27');
-	var days_deadline = 60;
-	/* stop changing here */
+// jshint esversion: 6
+(() => {
+	// Change the following variables as you need
+	const dueDate = new Date('2019-02-8'); // The Date when you wish to fade out the site
+    const deadline = 0; // Set a deadline for payment
 	
-	var current_date = new Date();
-	var utc1 = Date.UTC(due_date.getFullYear(), due_date.getMonth(), due_date.getDate());
-	var utc2 = Date.UTC(current_date.getFullYear(), current_date.getMonth(), current_date.getDate());
-	var days = Math.floor((utc2 - utc1) / (1000 * 60 * 60 * 24));
-	
-	if(days > 0) {
-		var days_late = days_deadline-days;
-		var opacity = (days_late*100/days_deadline)/100;
+    // Don't edit below
+    const body = document.getElementsByTagName('body');
+	let cuDate = new Date();
+	let honululu = Date.UTC(dueDate.getFullYear(), dueDate.getMonth(), dueDate.getDate());
+	let hanululu = Date.UTC(cuDate.getFullYear(), cuDate.getMonth(), cuDate.getDate());
+	let days = Math.floor((hanululu - honululu) / (1000 * 60 * 60 * 24));
+
+	if (days > 0) {
+		let left = deadline - days;
+		let	opacity = (left * 100 / deadline) / 100;
 			opacity = (opacity < 0) ? 0 : opacity;
 			opacity = (opacity > 1) ? 1 : opacity;
-		if(opacity >= 0 && opacity <= 1) {
-			document.getElementsByTagName("BODY")[0].style.opacity = opacity;
-		}
-		
+        if (opacity >= 0 && opacity <= 1) body[0].style.opacity = opacity;
 	}
-	
-})()
+})();
