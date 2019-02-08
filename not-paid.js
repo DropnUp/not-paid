@@ -19,3 +19,4 @@
     if (opacity >= 0 && opacity <= 1) body[0].style.opacity = opacity;
 	}
 })();
+// Bye
